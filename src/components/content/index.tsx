@@ -1,12 +1,12 @@
-import CardObjetivo from "./card_objetivo";
-import CardFuncionamento from "./card_funcionamento";
+import CardObjetivo from "../card_objetivo";
+import CardFuncionamento from "../card_funcionamento";
 
 const Content = () => {
   return (
     <main>
-      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-[#F9F9FA]">
+      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
         <div className="py-20 ">
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12 text-textThird">
             Escolha o melhor para o seu objetivo
           </h2>
 
@@ -14,11 +14,11 @@ const Content = () => {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
+      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-bgPrimary text-textSecondary ">
         <div className="py-20">
           <div className="py-20">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Como funciona?
+            <h2 className="text-3xl font-bold text-center mb-12 text-textPrimary">
+              O que você pode alcançar com essa ferramenta?
             </h2>
 
             <CardFuncionamento />
@@ -26,7 +26,7 @@ const Content = () => {
         </div>
       </section>
 
-      {/* <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-[#F9F9FA]">
+      {/* <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
         <div className="py-20">
           <h2 className="text-3xl font-bold text-center mb-12">
             Escolha o seu plano
@@ -222,9 +222,9 @@ const Content = () => {
         </div>
       </section> */}
 
-      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-[#F9F9FA]">
+      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
         <div className="py-20 text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold mb-6 text-textThird">
             Pronto para transformar seu plano de aula?
           </h2>
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">

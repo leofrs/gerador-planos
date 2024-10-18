@@ -1,4 +1,4 @@
-import { lessonPlaners } from "../../../db/lessonPlaners";
+import { lessonPlaners } from "../../db/lessonPlaners";
 
 const Card = () => {
   return (
@@ -7,11 +7,11 @@ const Card = () => {
         const { id, title, description } = lesson;
         return (
           <div
-            className="rounded-xl border bg-card text-card-foreground shadow text-center hover:shadow-lg transition-shadow"
+            className="rounded-xl border bg-card text-card-foreground shadow text-center hover:shadow-bgSecondary hover:border-bgSecondary transition-shadow"
             key={id}
           >
             <div className="flex flex-col space-y-1.5 p-6">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow hover:shadow-bgSecondary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -22,7 +22,7 @@ const Card = () => {
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  className="lucide lucide-arrow-right w-6 h-6"
+                  className="lucide lucide-arrow-right w-6 h-6 "
                 >
                   <path d="M5 12h14"></path>
                   <path d="m12 5 7 7-7 7"></path>

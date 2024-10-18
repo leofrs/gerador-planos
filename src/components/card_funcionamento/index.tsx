@@ -1,4 +1,4 @@
-import { funcionamento } from "../../../db/funciomento";
+import { funcionamento } from "../../db/funciomento";
 
 const CardObjetivo = () => {
   return (
@@ -6,7 +6,7 @@ const CardObjetivo = () => {
       {funcionamento.map((item) => {
         const { id, title, description } = item;
         return (
-          <div className="flex flex-col items-center text-center" key={id}>
+          <div className="flex flex-col items-center text-center " key={id}>
             <div className="w-12 h-12 border rounded-full flex items-center justify-center text-xl font-bold mb-4">
               {id}
             </div>

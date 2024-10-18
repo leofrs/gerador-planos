@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Gerador de Planos: Faça inicial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Tela principal](/src/assets/planos.png)
 
-Currently, two official plugins are available:
+## Descrição
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto está sendo desenvolvido para solucionar um problema que que eu tinha para montar roadmaps de estudo conforme o tema e topico sugeridos
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Login:** Aqui é onde as credenciais colocadas redirecionaram o usuário para a sua respectiva página
+- **Cadastro:** Aqui é onde o usúario vai conseguir efetuar o seu cadastro no app
 
-- Configure the top-level `parserOptions` property like this:
+## Requisitos Técnicos
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Fron-End
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Linguagem:** TypeScript;
+- **Framework:** React.js;
+- **Bibliotecas externas:**
+- **Estilização:** Tailwind CSS
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Estrutura do Projeto
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Organização de pastas:**
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/leofrs/psf
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor:
+
+   ```bash
+   npm run dev
+   ```
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+## Contato
+
+Para dúvidas ou suporte, entre em contato com [leofrrodrigues86@gmail.com](mailto:leofrrodrigues86@gmail.com).
+
+---
