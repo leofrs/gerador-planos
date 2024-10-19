@@ -4,7 +4,7 @@ import CardFuncionamento from "../card_funcionamento";
 const Content = () => {
   return (
     <main>
-      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
+      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-white">
         <div className="py-20 ">
           <h2 className="text-3xl font-bold text-center mb-12 text-textThird">
             Escolha o melhor para o seu objetivo
@@ -222,7 +222,7 @@ const Content = () => {
         </div>
       </section> */}
 
-      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 ">
+      <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-white">
         <div className="py-20 text-center">
           <h2 className="text-3xl font-bold mb-6 text-textThird">
             Pronto para transformar seu plano de aula?
