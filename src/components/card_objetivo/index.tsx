@@ -1,4 +1,4 @@
-import { lessonPlaners } from "../../db/lessonPlaners";
+import { lessonPlaners } from "../../db/cards/lessonPlaners";
 
 const Card = () => {
   return (
