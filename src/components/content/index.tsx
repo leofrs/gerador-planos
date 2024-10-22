@@ -1,5 +1,5 @@
-import CardObjetivo from "../card_objetivo";
-import CardFuncionamento from "../card_funcionamento";
+import CardObjetivo from "../cards/card_objetivo";
+import CardFuncionamento from "../cards/card_funcionamento";
 
 const Content = () => {
   return (

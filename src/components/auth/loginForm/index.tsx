@@ -26,9 +26,10 @@ export default function FormLogin() {
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    localStorage.setItem("usuario", data.email);
     setEmail(data.email);
     console.log(data);
-    navigate("/auth/user/home");
+    navigate("/auth/user/Home");
   };
 
   return (

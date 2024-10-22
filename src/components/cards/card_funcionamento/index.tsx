@@ -1,4 +1,4 @@
-import { funcionamento } from "../../db/cards/funciomento";
+import { funcionamento } from "../../../db/cards/funciomento";
 
 const CardObjetivo = () => {
   return (
