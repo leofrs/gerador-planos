@@ -15,15 +15,26 @@ export default function FormRegister() {
   } = useForm<Inputs>();
 
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmShowPassword((prevState) => !prevState);
+  };
+
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-4 w-[350px] ">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col items-center p-6 "
+    >
+      <h4 className="text-black mb-6 font-normal text-3xl">Cadastre-se</h4>
+
+      <div className="mb-6 w-[350px]">
         <label
           className="block text-sm font-medium text-gray-700"
           htmlFor="email"
@@ -34,37 +45,45 @@ export default function FormRegister() {
           id="email"
           type="email"
           placeholder="test@test.com"
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300 text-black"
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black"
           {...register("email", { required: true })}
         />
-        {errors.email && <span>E-mail é obrigatória</span>}
+        {errors.email && (
+          <span className="text-red-500 text-xs mt-1">
+            E-mail é obrigatória
+          </span>
+        )}
       </div>
 
-      <div className="mb-4 w-[350px] relative">
+      <div className="mb-6 w-[350px] relative ">
         <label
           className="block text-sm font-medium text-gray-700"
           htmlFor="password"
         >
           Senha
         </label>
+
         <input
           id="password"
           type={showPassword ? "text" : "password"}
           placeholder="******"
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300 text-black"
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black"
           {...register("password", { required: true })}
         />
         <button
           type="button"
           onClick={togglePasswordVisibility}
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5  cursor-pointer "
+          className="absolute top-8 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer text-gray-500 hover:text-blue-600 transition duration-200"
         >
           {showPassword ? "🙈" : "👀"}
         </button>
-        {errors.password && <span>Senha é obrigatória</span>}
+
+        {errors.password && (
+          <span className="text-red-500 text-xs mt-1">Senha é obrigatória</span>
+        )}
       </div>
 
-      <div className="mb-4 w-[350px] relative">
+      <div className="mb-6 w-[350px] relative">
         <label
           className="block text-sm font-medium text-gray-700"
           htmlFor="confirmPassword"
@@ -73,24 +92,27 @@ export default function FormRegister() {
         </label>
         <input
           id="confirmPassword"
-          type={showPassword ? "text" : "password"}
+          type={showConfirmPassword ? "text" : "password"}
           placeholder="******"
-          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-blue-300 text-black"
+          className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-black"
           {...register("confirmPassword", { required: true })}
         />
         <button
           type="button"
-          onClick={togglePasswordVisibility}
-          className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5  cursor-pointer "
+          onClick={toggleConfirmPasswordVisibility}
+          className="absolute top-8 right-0 pr-3 flex items-center text-sm leading-5 cursor-pointer text-gray-500 hover:text-blue-600 transition duration-200"
         >
-          {showPassword ? "🙈" : "👀"}
+          {showConfirmPassword ? "🙈" : "👀"}
         </button>
-        {errors.password && <span>Senha é obrigatória</span>}
+        {errors.confirmPassword && (
+          <span className="text-red-500 text-xs mt-1">Senha é obrigatória</span>
+        )}
       </div>
 
       <input
         type="submit"
-        className="w-full bg-bgPrimary text-white font-semibold rounded-md p-2 hover:bg-blue-600 transition cursor-pointer"
+        value="Entrar"
+        className="w-full bg-blue-500 text-white font-semibold rounded-md p-2 hover:bg-blue-600 transition-all duration-200 cursor-pointer shadow-md"
       />
     </form>
   );

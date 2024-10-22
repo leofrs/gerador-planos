@@ -30,13 +30,26 @@ const Navbar = () => {
             <div>
               <p className="text-textSecondary">Gerador de planos</p>
             </div>
-
-            <button
-              className="inline-flex items-center justify-center h-9 px-4 py-2 border rounded-md text-textSecondary cursor-pointer"
-              onClick={handleSair}
-            >
-              Sair
-            </button>
+            <ul className="hidden md:flex items-center space-x-4">
+              <li
+                className="inline-flex items-center justify-center h-9 px-4 py-2 bg-gray-700 rounded-md text-textSecondary cursor-pointer"
+                onClick={() => navigate("/auth/user/home")}
+              >
+                Dashboard
+              </li>
+              <li
+                className="inline-flex items-center justify-center h-9 px-4 py-2 border rounded-md cursor-pointer bg-bgSecondary text-textThird border-bgPrimary"
+                onClick={() => navigate("/auth/user/home/create")}
+              >
+                Criar
+              </li>
+              <li
+                className="inline-flex items-center justify-center h-9 px-4 py-2 bg-gray-700 rounded-md text-textSecondary cursor-pointer hover:bg-red-400 hover:text-textThird"
+                onClick={handleSair}
+              >
+                Sair
+              </li>
+            </ul>
           </div>
         </>
       ) : (
@@ -48,7 +61,7 @@ const Navbar = () => {
 
             <ul className="hidden md:flex items-center space-x-4">
               <li
-                className="inline-flex items-center justify-center h-9 px-4 py-2 border rounded-md text-textSecondary cursor-pointer"
+                className="inline-flex items-center justify-center h-9 px-4 py-2 border rounded-md bg-bgSecondary text-textThird border-bgPrimary cursor-pointer"
                 onClick={openLoginModal}
               >
                 Entrar
@@ -64,19 +77,11 @@ const Navbar = () => {
         </>
       )}
 
-      <ModalLogin
-        isOpen={isModalLoginOpen}
-        onClose={closeLoginModal}
-        title="Login"
-      >
+      <ModalLogin isOpen={isModalLoginOpen} onClose={closeLoginModal}>
         <FormLogin />
       </ModalLogin>
 
-      <ModalRegister
-        isOpen={isModalRegisterOpen}
-        onClose={closeRegisterModal}
-        title="Cadastro"
-      >
+      <ModalRegister isOpen={isModalRegisterOpen} onClose={closeRegisterModal}>
         <FormRegister />
       </ModalRegister>
     </nav>
