@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { planosCriados } from "../../../db/cards/planosCriados";
 
 const PlanosCriadosCard = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (id: number) => {
+    navigate(`/auth/user/home/details/${id}`);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
       {planosCriados.map((lesson) => {
@@ -9,6 +16,7 @@ const PlanosCriadosCard = () => {
           <div
             className="rounded-xl border  shadow text-center hover:shadow-bgSecondary hover:border-bgSecondary transition-shadow cursor-pointer"
             key={id}
+            onClick={() => handleCardClick(id)}
           >
             <div className="flex flex-col space-y-1.5 p-6">
               <h3 className="font-semibold leading-none tracking-tight">
