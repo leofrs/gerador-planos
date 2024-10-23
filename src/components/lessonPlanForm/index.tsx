@@ -3,6 +3,7 @@ import { ModalsHooks } from "../../hooks/modals";
 import { ProgressBar } from "../modals/loading";
 
 import { LessonPlanerApi } from "../../api/lessonPlaner";
+import ErrorModal from "../modals/error";
 
 type Inputs = {
   topic: string;
@@ -19,18 +20,27 @@ export default function LesosonPlanForm() {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const { loading, handleStartLoading } = ModalsHooks();
+  const {
+    loading,
+    handleStartLoading,
+    errorMessage,
+    setErrorMessage,
+    setLoading,
+  } = ModalsHooks();
+
   const lessonPlanerApi = new LessonPlanerApi();
 
   const email = "admin@admin.com";
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     handleStartLoading();
-    console.log(data);
+    setErrorMessage("");
+
     const { topic, subTopic, duration, studentLevel, objecive } = data;
 
     const durationNumber = Number(duration);
-    const result = await lessonPlanerApi.createLesson({
+
+    const dataFetch = await lessonPlanerApi.createLesson({
       topic,
       subTopic,
       duration: durationNumber,
@@ -39,8 +49,9 @@ export default function LesosonPlanForm() {
       email,
     });
 
-    if (result) {
-      console.log(result);
+    if (dataFetch.dataFetchError) {
+      setLoading(false);
+      setErrorMessage(dataFetch.dataFetchError);
     }
   };
 
@@ -166,6 +177,12 @@ export default function LesosonPlanForm() {
         />
       </form>
       {loading && <ProgressBar />}
+      {errorMessage && (
+        <ErrorModal
+          message={errorMessage}
+          onClose={() => setErrorMessage("")}
+        />
+      )}
     </>
   );
 }

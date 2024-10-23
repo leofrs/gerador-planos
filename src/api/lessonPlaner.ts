@@ -35,10 +35,15 @@ export class LessonPlanerApi {
 
     const data = await response.json();
 
+    let dataFetchOk;
+    let dataFetchError;
+
     if (response.ok) {
-      console.log(data.message);
+      dataFetchOk = data;
     } else {
-      alert(`Error encontrado: ${data.message}`);
+      dataFetchError = data.message;
     }
+
+    return { dataFetchOk, dataFetchError };
   }
 }

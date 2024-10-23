@@ -5,6 +5,7 @@ export const ModalsHooks = () => {
   const [isModalRegisterOpen, setIsModalRegisterOpen] =
     useState<boolean>(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const openLoginModal = () => setIsModalLoginOpen(!isModalLoginOpen);
   const closeLoginModal = () => setIsModalLoginOpen(!isModalLoginOpen);
@@ -27,5 +28,8 @@ export const ModalsHooks = () => {
     closeRegisterModal,
     loading,
     handleStartLoading,
+    errorMessage,
+    setErrorMessage,
+    setLoading,
   };
 };
