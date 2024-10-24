@@ -1,7 +1,7 @@
 export const lessonPlaners = [
   {
     id: 1,
-    title: "AI-Powered Generation",
+    title: "Gerado por IA",
     description: "Crie seus planos planos de aula/estudos em segundos com a IA",
   },
   {

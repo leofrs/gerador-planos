@@ -1,6 +1,10 @@
+import { ModalsHooks } from "../../hooks/modals";
+import FormLogin from "../auth/loginForm";
+import ModalLogin from "../modals/login";
 import Navbar from "./navbar";
 
 const Header = () => {
+  const { openLoginModal, isModalLoginOpen, closeLoginModal } = ModalsHooks();
   return (
     <header className=" w-full mx-auto  max-w-screen-xl px-2.5 md:px-20 bg-bgPrimary ">
       <Navbar />
@@ -16,14 +20,24 @@ const Header = () => {
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a className="inline-flex items-center justify-center  h-10 rounded-md px-8 border cursor-pointer text-textSecondary">
+          <a
+            className="inline-flex items-center justify-center  h-10 rounded-md px-8 border cursor-pointer text-textSecondary"
+            onClick={openLoginModal}
+          >
             Testar
           </a>
-          <a className="inline-flex items-center justify-center  h-10 rounded-md px-8 border cursor-pointer text-textSecondary">
+          <a
+            className="inline-flex items-center justify-center  h-10 rounded-md px-8 border cursor-pointer text-textSecondary"
+            href="#saiba-mais"
+          >
             Saiba Mais
           </a>
         </div>
       </section>
+
+      <ModalLogin isOpen={isModalLoginOpen} onClose={closeLoginModal}>
+        <FormLogin />
+      </ModalLogin>
     </header>
   );
 };

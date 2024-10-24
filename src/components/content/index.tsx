@@ -17,7 +17,10 @@ const Content = () => {
       <section className="mx-auto w-full max-w-screen-xl px-2.5 md:px-20 bg-bgPrimary text-textSecondary ">
         <div className="py-20">
           <div className="py-20">
-            <h2 className="text-3xl font-bold text-center mb-12 text-textPrimary">
+            <h2
+              className="text-3xl font-bold text-center mb-12 text-textPrimary"
+              id="saiba-mais"
+            >
               O que você pode alcançar com essa ferramenta?
             </h2>
 

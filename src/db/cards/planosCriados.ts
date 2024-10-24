@@ -5,6 +5,7 @@ export const planosCriados = [
     description: "Equação do segundo grau",
     time: 45,
     about: "lorem ipsulum",
+    nivel: "iniciante",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const planosCriados = [
     description: "Segunda guerra mundial",
     time: 60,
     about: "lorem ipsulum",
+    nivel: "Intermediario",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const planosCriados = [
     description: "Aquecimento global",
     time: 30,
     about: "lorem ipsulum",
+    nivel: "iniciante",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const planosCriados = [
     description: "Callback hell",
     time: 20,
     about: "lorem ipsulum",
+    nivel: "intermediario",
   },
   {
     id: 5,
@@ -33,5 +37,6 @@ export const planosCriados = [
     description: "Linked List",
     time: 25,
     about: "lorem ipsulum",
+    nivel: "intermediario",
   },
 ];
