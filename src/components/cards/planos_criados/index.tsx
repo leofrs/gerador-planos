@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LessonPlanerApi } from "../../../services/api/lessonPlaner";
+import { format, parseISO } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 const PlanosCriadosCard = () => {
 	const navigate = useNavigate();
@@ -38,7 +40,12 @@ const PlanosCriadosCard = () => {
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 			{planos.map((lesson) => {
-				const { _id, title, topico } = lesson;
+				const { _id, title, topico, created_at } = lesson;
+				const dataFormatada = format(
+					parseISO(created_at),
+					"dd/MM/yyyy",
+					{ locale: ptBR }
+				);
 				return (
 					<div
 						className="rounded-xl border shadow text-center hover:shadow-bgSecondary hover:border-bgSecondary transition-shadow cursor-pointer"
@@ -55,9 +62,9 @@ const PlanosCriadosCard = () => {
 							<p className="text-gray-500 font-light">{topico}</p>
 						</div>
 
-						<div className="h-12 w-full text-left px-6 flex items-center border border-top">
-							<p className="font-light text-gray-600">
-								{"22/10/2024"}
+						<div className="h-12 w-full px-6 flex items-center border border-top">
+							<p className="font-light text-gray-600 w-full ">
+								{dataFormatada}
 							</p>
 						</div>
 					</div>
