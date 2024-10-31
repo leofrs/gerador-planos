@@ -1,6 +1,6 @@
-# Gerador de Planos: Faça inicial
+# Gerador de Planos com IA
 
-![Tela principal](/src/assets/planos.png)
+![Tela principal](/src/assets/homeScreen.png)
 
 ## Descrição
 
@@ -8,41 +8,41 @@ Este projeto está sendo desenvolvido para solucionar um problema que que eu tin
 
 ## Funcionalidades
 
-- **Login:** Aqui é onde as credenciais colocadas redirecionaram o usuário para a sua respectiva página
-- **Cadastro:** Aqui é onde o usúario vai conseguir efetuar o seu cadastro no app
+-   **Login:** Aqui é onde as credenciais colocadas redirecionaram o usuário para a sua respectiva página
+-   **Cadastro:** Aqui é onde o usúario vai conseguir efetuar o seu cadastro no app
 
 ## Requisitos Técnicos
 
 ### Fron-End
 
-- **Linguagem:** TypeScript;
-- **Framework:** React.js;
-- **Bibliotecas externas:**
-- **Estilização:** Tailwind CSS
+-   **Linguagem:** TypeScript;
+-   **Framework:** React.js;
+-   **Bibliotecas externas:**
+-   **Estilização:** Tailwind CSS
 
 ## Estrutura do Projeto
 
-- **Organização de pastas:**
+-   **Organização de pastas:**
 
 ## Instalação
 
 1. Clone o repositório:
 
-   ```bash
-   git clone https://github.com/leofrs/psf
-   ```
+    ```bash
+    git clone https://github.com/leofrs/psf
+    ```
 
 2. Instale as dependências:
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
 3. Inicie o servidor:
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 
 ## Licença
 

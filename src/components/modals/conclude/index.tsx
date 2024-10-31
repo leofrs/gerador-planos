@@ -1,9 +1,9 @@
-interface Error {
+interface Conclude {
 	message: string;
 	onClose: () => void;
 }
 
-const ErrorModal = ({ message, onClose }: Error) => {
+const ConlcludeModal = ({ message, onClose }: Conclude) => {
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
 			<div className=" text-black rounded-lg shadow-lg w-full max-w-lg p-6 bg-white flex flex-col  gap-4">
@@ -17,18 +17,14 @@ const ErrorModal = ({ message, onClose }: Error) => {
 				</div>
 
 				<div className="flex flex-col justify-center items-center w-full h-full gap-4">
-					<h1 className="text-3xl font-bold">
-						Algo de errado aconteceu!
-					</h1>
-					<p className="font-normal text-gray-500">
-						Um erro foi encontrado ao gerar o seu modelo
-					</p>
+					<h1 className="text-3xl font-bold">Tarefa Finalizada...</h1>
+					<p className="font-light text-gray-500">Vá a dashboard</p>
 
-					<p className="text-red-600 font-semibold">{message}</p>
+					<p>{message}</p>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default ErrorModal;
+export default ConlcludeModal;

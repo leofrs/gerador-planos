@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 const indexOutlet = () => {
-  return <Outlet />;
+	return <Outlet />;
 };
 
 export default indexOutlet;
